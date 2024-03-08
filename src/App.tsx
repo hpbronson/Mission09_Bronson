@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import teamsData from './CollegeBasketballTeams.json';
 
 interface TeamProps {
   name: string;
@@ -60,8 +61,22 @@ function TeamList() {
   );
 }*/
 function TeamList() {
-  const [teams, setTeams] = useState<TeamProps[]>([]);
+  const [teams] = useState<TeamProps[]>(
+    teamsData.teams.map((team) => ({
+      name: team.name,
+      mascot: team.abbrev,
+      location: `${team.city}, ${team.state}`,
+    })),
+  );
 
+  return (
+    <div>
+      {teams.map((team, index) => (
+        <TeamCard key={index} {...team} />
+      ))}
+    </div>
+  );
+  /*
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -85,6 +100,7 @@ function TeamList() {
       ))}
     </div>
   );
+  */
 }
 
 function App() {
