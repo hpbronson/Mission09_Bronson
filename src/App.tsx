@@ -19,11 +19,6 @@ function Welcome() {
   );
 }
 
-/* #2: A team “card” that contains the following information about each school:
-• School Name
-• Mascot Name
-• Location (City, State)*/
-
 /*class TeamCard extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -38,17 +33,19 @@ function Welcome() {
   }
 } */
 
+/* #2: A team “card” that contains the following information about each school:
+• School Name
+• Mascot Name
+• Location (City, State)*/
 function TeamCard({ name, mascot, location }: TeamProps) {
   return (
-    <div>
+    <div className="team-card">
       <h1>{name}</h1>
       <h3>Mascot Name: {mascot}</h3>
-      <h3>Location City,State: {location}</h3>
+      <h3>Location (City,State): {location}</h3>
     </div>
   );
 }
-
-/*#3: A list of team cards that shows all the teams on the list. */
 
 /*
 function TeamList() {
@@ -60,6 +57,8 @@ function TeamList() {
     </div>
   );
 }*/
+
+/*#3: A list of team cards that shows all the teams on the list. */
 function TeamList() {
   const [teams] = useState<TeamProps[]>(
     teamsData.teams.map((team) => ({

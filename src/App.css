@@ -1,3 +1,40 @@
+.team-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px auto; /* Auto margins will center the cards */
+  width: 300px; /* Adjust width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left inside the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Team name styles */
+.team-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333; /* Adjust color as needed */
+  text-align: center; /* Center the team name */
+}
+
+/* Mascot and Location styles */
+.team-card p {
+  font-size: 1em;
+  margin-bottom: 0.25em;
+  text-align: center; /* Center the mascot name and location */
+}
+
+/* TeamList component styles */
+.team-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* This will center the cards in the list */
+  gap: 10px; /* This adds space between the cards */
+}
+
 .App {
   text-align: center;
 }
